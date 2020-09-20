@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="en">
+  <head>
+     <!-- Required meta tags -->
+    <title>PlantsportalBD</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+             <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+   </head>
+  <body>
+
+
+
+
+                                 <!--=======  Navbar  =======-->
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-black">
+    <!--  <img src="images/plats-portal-logo.png" class="logo"> --> <!-- image tag logo for srch box -->
+        <div class="container">
+
+          <a href="#" class="navbar-brand" >PlantsportalBD</a>
+
+           <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+           </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+             <ul class="navbar-nav ml-auto">
+
+
+
+            <li class="nav-item active">
+                <a href="#"class="nav-link">Home</a>
+              </li>
+
+              <div class="dropdown">
+               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Catagories
+              </button>
+
+           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Trees</a>
+               <a class="dropdown-item" href="#">Medicines</a>
+
+             </div>
+          </div>
+              <li class="nav-item">
+                <a href="" class="nav-link" data-toggle="modal" data-target="#login" >Login</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link" data-toggle="modal" data-target="#register" >Register</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+
+                      <!--+++ cart icon +++-->
+              <li class="cart">
+                <a href="shopping cart.html" class="nav-link" > <i class="fas fa-shopping-cart fa-2x"
+                  <span	class="badge badge-notify my-cart-badge"></span>></i></a>
+              </li>
+            </ul>
+
+                    <!--==  search bar ====-->
+         <form class="form-inline searchbar">
+            <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+         </form>
+
+          </div>
+        </div>
+      </nav>
+
+
+                          <!--==== login Modal ====-->
+
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enter Login Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+                        <!--=== login modal details ====---->
+        <form class="" id:"loginmodalform" >
+
+            <div class="form-group">
+                <h4>Email</h4>
+          <!--      <input type="email" class="form-controllogin" id="loginmodalemail" aria-describedby="emailHelp" placeholder="example@gmail.com" style="width: 350px;"> -->
+          <input type="text" class="form-control" id="loginmodalemail" name="email" style= "width: 350px" placeholder="example@gmail.com" onkeyup="loginmailvalidate();">
+          <span id="inv-mail" style="display:none; color:red ">Invalid Email</span><br/>
+
+
+            </div>
+            <div class="container">
+                <h4>Password</h4>
+              <input type="password"  class="form-control" id="loginmodalpass" name="password" style= "width: 350px"  placeholder="Input Password" onkeyup="loginpassvalidate();" >
+                  <p class="TextError"></p>
+
+            </div>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">LogIn</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+                        <!--====== Register Modal ========-->
+
+<div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+                        <!--=== Register modal details ==--->
+        <form>
+            <div class="form-row">
+              <div class="form-group col-sm-6">
+                <label for="validationServer01">First Name</label>
+                <input type="text" class="form-control" id="validationServer01" value="Arafat" required>
+                <div class= "valid-feedback">
+                  Looks Good!
+                </div>
+              </div>
+
+              <div class="form-group col-sm-6">
+                <label for="validationServer02">Last Name</label>
+                <input type="text" class="form-control" id="validationServer02" value="Mozumder" required>
+                <div class= "valid-feedback">
+                  Looks Good!
+                </div>
+               </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                <label >Email</label>
+              <!--  <input type="email" class="form-control" id="inputEmail4"placeholder="example@gmail.com"> -->
+                <input type="text" class="form-control" id="regmodalemail" name="email" placeholder="example@gmail.com" onkeyup="regmailvalidate();">
+                <span id="inv-mail1" style="display:none; color:red">Invalid Email</span><br/>
+
+
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="inputPassword4">Phone</label>
+                  <input type="tel" class="form-control" id="inputPassword4" placeholder="01*********">
+                </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-sm-4">
+                 <label for="validationServer03">country</label>
+                 <input type="text" class="form-control" id="validationServer03" required>
+                 <div id="validationServer03Feedback" class="invalid-feedback">
+                       Please provide a valid country.
+                 </div>
+              </div>
+
+
+                <div class="form-group col-sm-3">
+                <label for="validationServer04">city</label>
+                <select class="custome-select" id="validationServer04" required>
+                    <option selected disabled value=" ">Choose city</option>
+                    <option>Dhaka</option>
+                    <option>Ctg</option>
+                    <option>Sylhet</option>
+                </select>
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                      <div class="container">
+                         <label>Password</label>
+                          <input type="password"  class="form-control" id="regmodalpass" name="password"  placeholder="Atleast 6" onkeyup="regpassvalidate();";>
+                          <p class="TextError1"></p>
+                      </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label for="inputPassword4">Confirm Password</label>
+                    <input type="password" class="form-control" id="regmodalpass" placeholder="Atleast 6">
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-sm-9">
+                    <p>Gender :</p>
+
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1"> Male</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">Female</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline3">Other</label>
+                    </div>
+                </div>
+             </div>
+
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               <button class="btn btn-primary" type="submit">Register</button>
+             </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+                        <!--==  End of  Register modal details  ==-->
+
+
+                    <!--====// End of NAv=====-->
+
+                   <!--======= SLIDER ========-->
+      <section id="main">
+        <div id="Carousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#Carousel" data-slide-to="1"></li>
+            <li data-target="#Carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item carousel-image-1 active">
+              <div class="container">
+
+                <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                  <h1 class="display-3 h-color">Plant Tree and save life</h1>
+                  <p class="lead"></p>
+                  <a href="#" class="btn btn-color slide-btn btn-lg">Sign Up Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item carousel-image-2">
+              <div class="container">
+          <!--  <img src=" images/main cover1.jpg" class="d-block w-100"> -->
+                <div class="carousel-caption d-none d-sm-block mb-5">
+                  <h1 class="display-3 h-color">Go green</h1>
+                  <p class="lead"></p>
+                  <a href="#" class="btn btn-color slide-btn btn-lg">Learn More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item carousel-image-3">
+              <div class="container">
+                <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                  <h1 class="display-3 h-color">Plant tree more and more</h1>
+                  <p class="lead"></p>
+                  <a href="#" class="btn btn-color slide-btn btn-lg">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#Carousel" data-slide="prev" class="carousel-control-prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+
+          <a href="#Carousel" data-slide="next" class="carousel-control-next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </section>
+                     <!--+++// End of slider ++++-->
+
+
+
+
+                         <!--====== Product section =======-->
+
+ <section id="products" class="products py-5">
+  <div class="container">
+    <!-- section title -->
+    <div class="row">
+      <div class="col-10 mx-auto col-sm-6 text-center">
+        <h1 class="text-capitalize product-title">All Products</h1>
+      </div>
+    </div>
+            <!-- end section title -->
+
+             <!--+++++ Product items =++++-->
+    <div class="row product-items" id="product-items">
+         <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+         <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product1">
+
+            <img src="Images/mango-tree.jpg" class="card-img-top product-img" alt="">
+            </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Mango tree</h5>
+             <span> 180 Taka </span>
+
+             <div class="add add-2">
+               <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Mango tree"
+                 data-summary="summary 1" data-price="180" data-quantity="1"
+                 data-image="images/mango-tree.jpg">Add to Cart</button>
+             </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product2" >
+            <img src="Images/litchi tree.jpg" class="card-img-top product-img" alt="">
+           </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">litchi tree</h5>
+               <span>250 Taka</span>
+
+               <div class="add add-2">
+                 <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="litchi tree"
+                   data-summary="summary 1" data-price="250" data-quantity="1"
+                   data-image="images/litchi tree.jpg">Add to Cart</button>
+               </div>
+
+
+
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product3" >
+            <img src="Images/Tomato1.jpg" class="card-img-top product-img" alt="">
+            </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Tomato Tree</h5>
+              <span> 150 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Tomato Tree"
+                  data-summary="summary 1" data-price="150" data-quantity="1"
+                  data-image="images/Tomato1.jpg">Add to Cart</button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product4" >
+            <img src="Images/papaya tree.jpg" class="card-img-top product-img" alt="">
+          </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Papaya tree</h5>
+              <span> 145 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Papaya tree"
+                  data-summary="summary 1" data-price="145" data-quantity="1"
+                  data-image="images/papaya tree.jpg">Add to Cart</button>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product5" >
+            <img src="Images/Pear2.jpg" class="card-img-top product-img" alt="">
+           </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Pear Tree </h5>
+              <span> 200 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Pear Tree"
+                  data-summary="summary 1" data-price="200" data-quantity="1"
+                  data-image="images/Pear2.jpg">Add to Cart</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product6" >
+            <img src="Images/Rose2.jpg" class="card-img-top product-img" alt="">
+           </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Rose Tree</h5>
+              <span> 280 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Rose Tree"
+                  data-summary="summary 1" data-price="280" data-quantity="1"
+                  data-image="images/Rose2.jpg">Add to Cart</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product7">
+            <img src="Images/jackfruit tree.jpg" class="card-img-top product-img" alt="">
+            </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Jackfruit tree</h5>
+              <span> 220 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Jackfruit tree"
+                  data-summary="summary 1" data-price="220" data-quantity="1"
+                  data-image="images/jackfruit tree.jpg">Add to Cart</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container"href="#" data-toggle="modal" data-target="#product8">
+            <img src="Images/Averrhoa bilimbi.jpg" class="card-img-top product-img" alt="">
+            </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="store-item-name">Bilimbi tree</h5>
+              <span> 120 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Bilimbi tree"
+                  data-summary="summary 1" data-price="120" data-quantity="1"
+                  data-image="images/Averrhoa bilimbi.jpg">Add to Cart</button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product9">
+            <img src="Images/Boroi tree.jpg" class="card-img-top product-img" alt="">
+        </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Boroi tree</h5>
+              <span> 180 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Boroi tree"
+                  data-summary="summary 1" data-price="180" data-quantity="1"
+                  data-image="images/Boroi tree.jpg">Add to Cart</button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+      <!-- single items -->
+      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container" href="#" data-toggle="modal" data-target="#product10">
+            <img src="Images/amloki tree.jpg" class="card-img-top product-img" alt="">
+          </div>
+          <div class="card-body">
+            <div class="card-text d-flex justify-content-between text-capitalize">
+              <h5 id="item-name">Amloki tree</h5>
+              <span> 200 Taka</span>
+
+              <div class="add add-2">
+                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Amloki tree"
+                  data-summary="summary 1" data-price="200" data-quantity="1"
+                  data-image="images/amloki tree.jpg">Add to Cart</button>
+              </div>
+
+           </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of single item -->
+    </div>
+    <!-- end of store items -->
+  </div>
+</section>
+                  <!---=== end of store section ====-->
+              <!---====- End of Product Section  =======-->
+
+
+                        <!--======= Product Modal ==========-->
+
+  <div class="modal fade" id="product1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tree Details</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+        </button>
+     </div>
+      <div class="modal-body">
+
+             <!--======= Product modal details =========-->
+
+   <form>
+        <div class="col-md-5 span-2">
+          <div class="item">
+            <img src="images/mango-tree.jpg" class="img-responsive" alt="">
+          </div>
+        </div>
+        <div class="col-md-7 span-1 ">
+          <h3>Mango Tree</h3>
+          <div class="price_single">
+             <span class="productmodalprice">Price :180 Taka</span>
+           <div class="clearfix"></div>
+        </div>
+
+          <h4 class="quick_title">Details:</h4>
+          <p class="quick_description"> Mangoes are juicy stone fruit (drupe) from numerous species of tropical trees belonging to the floweringplant
+             genus Mangifera, cultivated mostly for their edible fruit.
+             The majority of these species are found in nature as wild mangoes. The genus belongs to the cashew family Anacardiaceae.</p>
+          <div class="add-to">
+            <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1"
+              data-name="mango-tree" data-summary="summary modal" data-price="180" data-quantity="1"
+              data-image="images/mango-tree.jpg">Add to Cart</button>
+          </div>
+        </div>
+      <div class="clearfix"> </div>
+    </form>
+
+                          <!--=== End of form ====-->
+     </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+                   <!--++++++ End of Single Product Modal ++++++-->
+
+                   <!--======= Product Modal ==========-->
+<div class="modal fade" id="product2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Tree Details</h5>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+<div class="modal-body">
+
+                 <!--======= Product modal details =========-->
+
+<form>
+   <div class="col-md-5 span-2">
+     <div class="item">
+       <img src="images/litchi tree.jpg" class="img-responsive" alt="">
+     </div>
+   </div>
+  <div class="col-md-7 span-1 ">
+     <h3>Litchi Tree</h3>
+     <div class="price_single">
+       <span class="productmodalprice">Price :250 Taka</span>
+       <div class="clearfix"></div>
+     </div>
+     <h4 class="quick_title">Details:</h4>
+      <p class="quick_description">Lychee, (Litchi chinensis), also spelled litchi or lichi, evergreen tree of the soapberry family (Sapindaceae),
+       grown for its edible fruit. Lychee is native to Southeast Asia and has been a favourite fruit of the Cantonese since ancient times.</p>
+     <div class="add-to">
+        <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1"
+         data-name="litchi tree" data-summary="summary modal" data-price="250" data-quantity="1"
+         data-image="images/litchi tree.jpg">Add to Cart</button>
+     </div>
+    </div>
+ <div class="clearfix"> </div>
+
+  </form>
+
+                                 <!-- End of form-->
+  </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+     </div>
+   </div>
+  </div>
+</div>
+
+                        <!--++++++ End of Single Product Modal ++++++-->
+
+
+                        <!--======= Product Modal ==========-->
+
+   <div class="modal fade" id="product3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tree Details</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+        </button>
+     </div>
+      <div class="modal-body">
+
+             <!--======= Product modal details =========-->
+
+     <form>
+        <div class="col-md-5 span-2">
+          <div class="item">
+            <img src="images/Tomato1.jpg" class="img-responsive" alt="">
+          </div>
+        </div>
+        <div class="col-md-7 span-1 ">
+          <h3>Tomato Tree</h3>
+          <div class="price_single">
+            <span class="productmodalprice">Price :150 Taka</span>
+            <div class="clearfix"></div>
+          </div>
+          <h4 class="quick_title">Details:</h4>
+          <p class="quick_description">The tomato is the edible, often red berry of
+            the plant Solanum lycopersicum, commonly known as a tomato plant.
+            The species originated in western South America and Central America.</p>
+          <div class="add-to">
+            <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1"
+              data-name="Tomato1" data-summary="summary modal" data-price="150" data-quantity="1"
+              data-image="images/Tomato1.jpg">Add to Cart</button>
+           </div>
+         </div>
+        <div class="clearfix"> </div>
+
+     </form>
+
+                                      <!-- End of form-->
+     </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+                             <!--++++++ End of Single Product Modal ++++++-->
+
+
+                             <!--======= Product Modal ==========-->
+
+    <div class="modal fade" id="product4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+          <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Tree Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+           <div class="modal-body">
+
+
+                     <!--======= Product modal details =========-->
+
+          <form>
+             <div class="col-md-5 span-2">
+               <div class="item">
+                 <img src="images/papaya tree.jpg" class="img-responsive" alt="">
+               </div>
+             </div>
+             <div class="col-md-7 span-1 ">
+               <h3>Papaya Tree</h3>
+                <div class="price_single">
+                 <span class="productmodalprice">Price :200 Taka</span>
+                 <div class="clearfix"></div>
+               </div>
+               <h4 class="quick_title">Details:</h4>
+               <p class="quick_description">The papaya is a small, sparsely branched tree,
+                 usually with a single stem growing from 5 to 10 m (16 to 33 ft) tall,
+                  with spirally arranged leaves confined to the top of the trunk.</p>
+               <div class="add-to">
+                 <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1"
+                   data-name="papaya tree" data-summary="summary modal" data-price="200" data-quantity="1"
+                   data-image="images/papaya tree.jpg">Add to Cart</button>
+                </div>
+              </div>
+           <div class="clearfix"> </div>
+        </form>
+                                           <!-- End of form-->
+          </div>
+            <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+             </div>
+          </div>
+        </div>
+      </div>
+                                  <!--++++++ End of Single Product Modal ++++++-->
+
+
+                                      <!--======= Product Modal ==========-->
+
+        <div class="modal fade" id="product5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                 <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Tree Details</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+
+                       <!--======= Product modal details =========-->
+
+             <form>
+                  <div class="col-md-5 span-2">
+                    <div class="item">
+                      <img src="images/Pear2.jpg" class="img-responsive" alt="">
+                    </div>
+                  </div>
+                  <div class="col-md-7 span-1 ">
+                     <h3>Pear Tree</h3>
+                    <div class="price_single">
+                      <span class="productmodalprice">Price :200 Taka</span>
+                      <div class="clearfix"></div>
+                    </div>
+                    <h4 class="quick_title">Details:</h4>
+                      <p class="quick_description"> Pear tree is a deciduous tree (it loses its leaves seasonally)
+                      that can grow up to 40 feet (12 meters) tall or even more.
+                       Nearly all pear trees that are cultivated for fruits are deciduous.</p>
+                    <div class="add-to">
+                      <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1"
+                        data-name="Pear2" data-summary="summary modal" data-price="200" data-quantity="1"
+                        data-image="images/Pear2.jpg">Add to Cart</button>
+                    </div>
+                  </div>
+                <div class="clearfix"> </div>
+              </form>
+
+                                    <!-- End of form-->
+               </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                             <!--++++++ End of Single Product Modal ++++++-->
+
+                              <!--======= Product modal  =========-->
+
+         <div class="modal fade" id="product6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+                 <div class="modal-content">
+                    <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Tree Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+               <div class="modal-body">
+
+                                      <!--======= Product modal details =========-->
+
+        <form>
+           <div class="col-md-5 span-2">
+             <div class="item">
+                 <img src="images/Rose2.jpg" class="img-responsive" alt="">
+             </div>
+         </div>
+              <div class="col-md-7 span-1 ">
+                 <h3>Rose Tree</h3>
+                   <div class="price_single">
+                    <span class="productmodalprice">Price :280 Taka</span>
+                     <div class="clearfix"></div>
+                 </div>
+
+                    <h4 class="quick_title">Details:</h4>
+                     <p class="quick_description"> A rose is a woody perennial flowering plant of the genus Rosa, in the family Rosaceae,
+                        or the flower it bears. There are over three hundred species and tens of thousands of cultivars.</p>
+                       <div class="add-to">
+                         <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1"
+                           data-name="Rose2" data-summary="summary modal" data-price="280" data-quantity="1"
+                           data-image="images/Rose2.jpg">Add to Cart</button>
+                    </div>
+               </div>
+                  <div class="clearfix"> </div>
+         </form>
+
+                                               <!-- End of form-->
+              </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                   </div>
+              </div>
+           </div>
+       </div>
+
+                                  <!--++++++ End of Single Product Modal ++++++-->
+
+
+
+
+             <!---======  Service Section  ==========-->
+  <section class="services py-5 text-center">
+      <div class="container">
+          <div class="row">
+             <!--2ta Service sections-->
+              <!--Single Service-->
+              <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                <span class="service-icon">
+                    <i class="fas fa-stamp fa-2x"></i>
+                </span>
+       <h5 class="font-weight-bold text-uppercase">Gardening Service</h5>
+       <p>Call us: +881521508754</p>
+       <p class="text-capitalize"></p>
+            </div>
+            <!--end of Service=-->
+
+            <!--Single Service-->
+            <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                <span class="service-icon">
+                    <i class="fa fa-truck"></i>
+                </span>
+       <h5 class="font-weight-bold text-uppercase">Home Delivery</h5>
+       <p>We also provide Home Delivery</p>
+       <p class="text-capitalize"></p>
+            </div>
+                  <!--end of Service=-->
+          </div>
+      </div>
+  </section>
+           <!---End of Service Section=======-->
+
+
+
+             <!--=======-About Section=====-->
+
+  <section id="about-sec">
+     <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 text-center">
+          <img src="Images/cover3.jpg" width="850" height="150"
+          class="img-fluid watch-img">
+        </div>
+        <div class="col-lg-7 text-lg-right  text-center text-color about-text">
+          <h1 >About us</h1>
+          <p class="text">We try to make our world green and save natural world, Its just a small work. </p>
+        </div>
+      </div>
+      </div>
+      </section>
+      <!---End of About Section---->
+      <!--Best Seller Products-->
+      <section class="seller py-5">
+        <div class="container">
+          <!--Section title-->
+          <div class="row mb-5">
+            <div class="col d-flex flex-wrap text-uppercase justify-content-center">
+              <h1 class="font-weight-bold align-self-center mx-1">
+                Best Selling Products
+              </h1>
+            </div>
+          </div>
+          <!---End of Title-->
+          <div class="row">
+           <div class="col-sm-6 ">
+              <div class="seller-item">
+                <img src="Images/mango-tree.jpg" alt="" class="img-fluid photo">
+                <p>Very helpful for our health</p>
+               </div>
+            </div>
+            <!--End of first column-->
+            <div class="col-sm-6 d-flex flex-column justify-content-between">
+              <div class="row">
+                <!--first item-->
+                <div class="col-sm-6">
+                  <div class="seller-item">
+                    <img src="Images/Pear2.jpg" alt="" class="img-fluid seller-img">
+
+                    <p>Everyone Likes it</p>
+                  </div>
+                </div>
+                <!--End of 1st item-->
+                 <!--first item-->
+                 <div class="col-sm-6">
+                  <div class="seller-item">
+                    <img src="Images/Tomato1.jpg" alt="" class="img-fluid seller-img">
+
+                    <p>Everyones Favourite</p>
+                  </div>
+                </div>
+                <!--End of 1st item-->
+              </div>
+              <!--end of row-->
+              <div class="row">
+                <!--first item-->
+                <div class="col-sm-6">
+                  <div class="seller-item">
+                    <img src="Images/litchi tree.jpg" alt="" class="img-fluid seller-img
+                    img-top">
+
+                    <p>Most Favourite</p>
+                  </div>
+                </div>
+                <!--End of 1st item-->
+
+              </div>
+            </div>
+          </div>
+         </div>
+      </section>
+              <!---End of Best Seller-->
+
+
+               <!--Contact us Section-->
+
+                  <!--===Contact US====-->
+    <section class="contact py-5">
+      <div class="container">
+          <h2 class="section-heading">Contact Us</h2>
+          <form class="col-lg-6 offset-lg-3">
+              <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="Enter name">
+              </div>
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" placeholder="Type your message" row="5">
+
+              </textarea>
+              </div>
+              <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="check">
+                  <label class="form-check-label" for="check">Subscribe to newsletter</label>
+              </div>
+              <div class="text-center">
+                  <button class="btn btn-lg btn-color cont-btn">Submit</button>
+              </div>
+          </form>
+      </div>
+  </section>
+
+                 <!--End of Contact Section-->
+
+
+             <!--==== Scroll up button ====-->
+    <a class="gotopbtn" href="#"><i class= "fas fa-arrow-up"></i></a>
+
+
+          <!--======== Footer ========-->
+    <footer class="footer mt-5">
+       <div class="text-center py-5">
+          <h2 class="py-3">PlantsportalBD</h2>
+          <div class="mx-auto heading-line"></div>
+      </div>
+     <div class="container">
+          <div class="row mb-3">
+              <div class="col-lg-8 offset-lg-2 text-center">
+                  <p>We have more fresh trees and provide best to our customer and give best gardening service. </p>
+                  <div class="justify-content-center">
+                    <i class="fab fa-facebook fa-2x"></i>
+                    <i class="fab fa-twitter fa-2x"></i>
+                    <i class="fab fa-instagram fa-2x"></i>
+                </div>
+            </div>
+       </div>
+           <div class="copyright text-center py-3 border-top text-light">
+            <p>&copy; Copy Right To PlantsportalBD , &copy; 2020</p>
+         </div>
+      </div>
+  </footer>
+
+
+
+
+                   <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/Email_pass_validate.js"> </script>
+
+
+
+
+
+  </body>
+</html>
